@@ -1,7 +1,3 @@
-$("a").on("click",function(e){
-    e.preventDefault();
-})
-
 //判斷navbar的下拉式選單
 $(".navbarList>a").on("click",function(e){
     e.stopPropagation();
@@ -47,6 +43,7 @@ $(".navbarList>ul").on("click",function(e){
 
 //mobile版本的右拉式選單
 $(".navbarToggle>a").on("click",function(e){
+    e.preventDefault();
     e.stopPropagation();
     $(".mobileNavbar").toggleClass("show");
     $(".modal").toggleClass("show");
