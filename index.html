@@ -7,20 +7,22 @@
     <title>首頁</title>
     <link rel="stylesheet" href="./css/cssReset.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/slideImg.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
-    <script src="./js/all.js" defer></script>
+    <script src="./js/navbar.js" defer></script>
+    <script src="./js/slideImg.js" defer></script>
 </head>
 <body>
     <div class="modal"></div>
     <div class="mobileNavbar">
         <ul>
             <li>
-                <div class="search">
+                <form class="search">
                     <input type="text" placeholder="遊戲搜尋" class="searchTxt">
                     <button class="searchBtn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                </div>
+                </form>
             </li>
             <li class="navbarList">
                 <a href="#">
@@ -122,7 +124,33 @@
         </header>
         <!--主要內容-->
         <main>
-            
+            <div class="slidecContainer">
+                <div class="slide">
+                    <div class="slideImg">
+                        <img src="http://localhost:7940/%e5%9c%96%e7%89%87/%e5%85%ac%e5%91%8a%e6%ac%84%e5%9c%96%e7%89%87/%e6%ad%a3%e5%b8%b8/4183338912.png">
+                    </div>
+                    <div class="slideImg">
+                        <img src="http://localhost:7940/%e5%9c%96%e7%89%87/%e5%85%ac%e5%91%8a%e6%ac%84%e5%9c%96%e7%89%87/%e6%ad%a3%e5%b8%b8/1.png" alt="">
+                    </div>
+                    <div class="slideImg">
+                        <img src="http://localhost:7940/%e5%9c%96%e7%89%87/%e5%85%ac%e5%91%8a%e6%ac%84%e5%9c%96%e7%89%87/%e6%ad%a3%e5%b8%b8/3.jpg" alt="">
+                    </div>
+                    <!--左右箭頭-->
+                    <a href="#" class="prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                <!--分頁-->
+                <div class="slideIndicators">
+                    <span class="dot" data-page="1"></span>
+                    <span class="dot" data-page="2"></span>
+                    <span class="dot" data-page="3"></span>
+                </div>
+            </div>
+
         </main>
     </div>
 </body>

@@ -11,3 +11,8 @@ a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
