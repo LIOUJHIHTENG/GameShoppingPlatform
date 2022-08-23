@@ -1,6 +1,10 @@
+.mobileSlide{
+    display: none;
+}
+
 .slide{
     position: relative;
-
+    background-color: white;
     .slideImg{
         display: none;
 
@@ -10,7 +14,7 @@
         }
         @keyframes fade {
             from{
-                opacity: 0.4;
+                opacity: 0.5;
             }
             to{
                 opacity: 1;
@@ -56,9 +60,20 @@
         background: rgb(72,83,95);
         border-radius: 5px;
         transition: background-color 0.6s ease;
+        margin-top: 1rem;
 
         &.active,&:hover{
             background-color: rgb(118,126,135);
         }
+    }
+}
+
+@media(max-width:767px){
+    .pcSlide{
+        display: none;
+    }
+
+    .mobileSlide{
+        display: block;
     }
 }

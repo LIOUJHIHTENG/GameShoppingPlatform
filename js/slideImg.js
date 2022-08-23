@@ -1,26 +1,67 @@
-$(".prev").on("click",function(){
-    slide(-1);
+let slideId=["pcSlide","mobileSlide"];
+let currentIndex=[0,0];
+
+slideId.forEach(function(item,index){
+    $(`.${slideId[index]} .dot`).on("click",function(){
+        let imgIndex=$(this).data("imgIndex");
+        activeSlide(currentIndex=imgIndex,index);
+        stopThenStartSlidingImg();
+    })
+
+    $(`.${slideId[index]} .prev`).on("click",function(e){
+        e.preventDefault();
+        slide(-1,index);
+    })
+    
+    $(`.${slideId[index]} .next`).on("click",function(e){
+        e.preventDefault();
+        slide(1,index);
+    })
 })
 
-$(".next").on("click",function(){
-    slide(1);
-})
-
-$(".dot").on("click",function(){
-    let page=$(this).data("page");
-    currentSlide(page);
-})
-
-let firstPage=1;
-activeSlide(firstPage)
-function slide(page){
-    activeSlide(firstPage+=page);
+function slide(slideIndex,id){
+    activeSlide(currentIndex[id]+=slideIndex,id);
+    stopThenStartSlidingImg();
 }
 
-function currentSlide(page){
-    activeSlide(firstPage=page);
+function activeSlide(slideIndex,id){
+    let slideImgs=$(`.${slideId[id]} .slideImg`);
+    let dots=$(`.${slideId[id]} .dot`);
+    if(slideIndex>slideImgs.length-1){
+        currentIndex[id]=0;
+    }
+    if(slideIndex<0){
+        currentIndex[id]=slideImgs.length-1;
+    }
+    slideImgs.each(function(){
+        $(this).css("display","none");
+    });
+    dots.each(function(){
+        $(this).removeClass("active");
+    });
+    slideImgs.eq(currentIndex[id]).css("display","block")
+    slideImgs.eq(currentIndex[id]).addClass("fade")
+    dots.eq(currentIndex[id]).addClass("active");
 }
 
-function activeSlide(page){
-
+var slidingImg;
+function startSlideImg(){
+    slidingImg=setInterval(function(){
+        slideId.forEach(function(item,index){
+            slide(1,index)
+        })
+    },5000);
 }
+
+function stopSlideImg(){
+    clearInterval(slidingImg);
+}
+
+function stopThenStartSlidingImg(){
+    stopSlideImg();
+    startSlideImg();
+}
+
+activeSlide(1,0);
+activeSlide(1,1);
+startSlideImg();

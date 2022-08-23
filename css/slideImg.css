@@ -1,6 +1,11 @@
 @charset "UTF-8";
+.mobileSlide {
+  display: none;
+}
+
 .slide {
   position: relative;
+  background-color: white;
   /*左右箭頭*/
 }
 .slide .slideImg {
@@ -14,7 +19,7 @@
 }
 @-webkit-keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
@@ -22,7 +27,7 @@
 }
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
@@ -70,7 +75,18 @@
   border-radius: 5px;
   -webkit-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
+  margin-top: 1rem;
 }
 .slideIndicators .dot.active, .slideIndicators .dot:hover {
   background-color: rgb(118, 126, 135);
+}
+
+@media (max-width: 767px) {
+  .pcSlide {
+    display: none;
+  }
+
+  .mobileSlide {
+    display: block;
+  }
 }
