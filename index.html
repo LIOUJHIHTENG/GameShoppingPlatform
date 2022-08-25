@@ -7,10 +7,13 @@
     <title>首頁</title>
     <link rel="stylesheet" href="./css/cssReset.css">
     <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/slideImg.css">
+    <link rel="stylesheet" href="./css/index/index.css">
+    <link rel="stylesheet" href="./css/index/slideImg.css">
+    <link rel="stylesheet" href="./css/index/announcement.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="./js/navbar.js" defer></script>
     <script src="./js/slideImg.js" defer></script>
+    <script src="./js/announcement.js" defer></script>
 </head>
 <body>
     <div class="modal"></div>
@@ -147,9 +150,9 @@
                     </div>
                     <!--分頁-->
                     <div class="slideIndicators">
-                        <span class="dot" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
+                        <span class="dot" data-num="0"></span>
+                        <span class="dot" data-num="1"></span>
+                        <span class="dot" data-num="2"></span>
                     </div>
                 </div>
                 <!--行動裝置尺寸最新消息-->
@@ -180,7 +183,30 @@
                     </div>
                 </div>
             </div>
-
+            <div class="announcement">
+                <div class="title">
+                    <span>最新公告</span>
+                </div>
+                <div class="content">
+                    <div class="announcementTable">
+                        <div class="label">
+                            <div>標題</div>
+                            <div>日期</div>
+                            <div></div>
+                        </div>
+                        <ul class="data">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="leaderboard">
+                <div class="title">
+                    <span>銷售排行榜</span>
+                </div>
+                <div class="content">
+                    
+                </div>
+            </div>
         </main>
     </div>
 </body>
