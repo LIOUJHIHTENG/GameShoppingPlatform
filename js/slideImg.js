@@ -2,7 +2,6 @@ let slideId=["pcSlide","mobileSlide"];
 let currentIndex=[0,0];
 
 slideId.forEach(function(item,index){
-    console.log(index)
     $(`.${slideId[index]} .dot`).on("click",function(){
         let num=$(this).data("num");
         activeSlide(currentIndex[index]=num,index);
