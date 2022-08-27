@@ -1,0 +1,18 @@
+[
+    {
+        "host":"0",
+        "name":"所有主機"
+    },
+    {
+        "host":"1",
+        "name":"PS4"
+    },
+    {
+        "host":"2",
+        "name":"XBOX"
+    },
+    {
+        "host":"3",
+        "name":"SWITCH"
+    }
+]

@@ -163,6 +163,12 @@ header .logo {
   width: 150px;
   /*下拉選項show*/
 }
+.navbar .navbarList ul li:hover {
+  background-color: rgb(255, 255, 255);
+}
+.navbar .navbarList ul li:hover a {
+  color: rgb(52, 58, 64);
+}
 .navbar .navbarList ul a {
   padding: 1em;
   border-right: none;
@@ -201,6 +207,12 @@ main {
     margin-top: 1rem;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
+  }
+  .mobileNavbar ul .navbarList ul li:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  .mobileNavbar ul .navbarList ul li:hover a {
+    color: rgb(52, 58, 64);
   }
   .mobileNavbar .search {
     display: -webkit-box;

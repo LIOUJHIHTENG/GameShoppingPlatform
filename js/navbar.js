@@ -41,6 +41,47 @@ $(".navbarList>ul").on("click",function(e){
     e.stopPropagation();
 })
 
+function getJson(json){
+    $.ajax({
+        url:json,
+        method:"get",
+        type:"json",
+        success:function(res){
+            createTypeDoms(res);
+        }
+    })
+}
+
+function createTypeDoms(json){
+    let typeNavbarList=$(".typeNavbarList>ul");
+    let hostNavbarList=$(".hostNavbarList>ul");
+    let domElements="";
+    if(json[0].host===undefined){
+        domElements=json.map(function(item){
+            let doms=`
+            <li><a href="./gameList.html?type=${item.type}">${item.name}</a></li>
+            `;
+            return doms
+        }).join("");
+        typeNavbarList.append(domElements);
+    }else{
+        domElements=json.map(function(item){
+            let doms=`
+            <li><a href="./gameList.html?host=${item.host}">${item.name}</a></li>
+            `;
+            return doms
+        }).join("");
+        hostNavbarList.append(domElements);
+    }
+}
+//抓取遊戲種類到下拉式選單內
+let  typeJson="../json/type.json";
+getJson(typeJson);
+
+//抓取主機種類到下拉式選單內
+let  hostJson="../json/host.json";
+getJson(hostJson);
+
 //mobile版本的右拉式選單
 $(".navbarToggle>a").on("click",function(e){
     e.preventDefault();

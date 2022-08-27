@@ -136,6 +136,12 @@ header{
             border:$navbarList-border;
             border-radius: 5px;
             width: 150px;
+            li:hover{
+                background-color: rgb(255,255,255);
+                a{
+                    color:rgb(52,58,64);
+                }
+            }
             /*下拉選項show*/
             a{
                 padding: 1em;
@@ -186,6 +192,12 @@ main{
                     margin-top: 1rem;
                     border:$navbarList-border;
                     border-radius: 5px;
+                    li:hover{
+                        background-color: rgb(255,255,255);
+                        a{
+                            color:rgb(52,58,64);
+                        }
+                    }
                 }
             }
         }
