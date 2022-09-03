@@ -2,49 +2,65 @@
 .content {
   font-size: 1.5rem;
 }
-.content .label {
+.content .attr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 /*最新公告*/
-.announcementTable .label {
+.announcementContent .attr {
   background-color: rgb(65, 65, 65);
   text-align: center;
   padding: 1rem 0;
   border-radius: 5px 5px 0 0;
+  font-weight: bolder;
 }
-.announcementTable .label div:is(:nth-of-type(2), :last-of-type) {
+.announcementContent .attr div:is(:nth-of-type(2), :last-of-type) {
   width: 25%;
 }
-.announcementTable > .label > div:first-of-type, .announcementTable > .data > li > div:first-of-type {
+.announcementContent > .attr > div:first-of-type, .announcementContent > .data > li > div:first-of-type {
   width: 50%;
 }
-.announcementTable > .label > div:is(:nth-of-type(2), :last-of-type), .announcementTable > .data > li > div:is(:nth-of-type(2), :last-of-type) {
+.announcementContent > .attr > div:is(:nth-of-type(2), :last-of-type), .announcementContent > .data > li > div:is(:nth-of-type(2), :last-of-type) {
   width: 25%;
 }
-.announcementTable .data {
-  height: 300px;
+.announcementContent .data {
+  min-height: 300px;
   background-color: rgb(11, 13, 15);
 }
-.announcementTable .data li {
+.announcementContent .data li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   padding: 1rem 0;
 }
-.announcementTable .data li:nth-of-type(2n+1) {
+.announcementContent .data li:nth-of-type(2n+1) {
   background-color: rgb(17, 20, 21);
 }
-.announcementTable .data li:nth-of-type(2n) {
+.announcementContent .data li:nth-of-type(2n) {
   background-color: rgb(11, 13, 15);
 }
-.announcementTable .data li:hover {
+.announcementContent .data li:hover {
   background-color: rgb(122, 122, 122);
 }
-.announcementTable .page {
+.announcementContent .data li :is(.detailBtn) {
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(25, 149, 169);
+  color: rgb(255, 255, 255);
+}
+.announcementContent .data li :is(.detailBtn):hover {
+  background-color: rgb(21, 106, 119);
+}
+.announcementContent .page {
   margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,7 +72,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.announcementTable .page .currentPageTxt {
+.announcementContent .page .currentPageTxt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,6 +84,26 @@
           align-items: center;
   margin: 0 1rem;
 }
-.announcementTable .page .currentPageTxt input[type=number] {
+.announcementContent .page .currentPageTxt input[type=number] {
   width: 50px;
+  text-align: center;
+  border-radius: 3px;
+  border: solid 1px #444;
+  padding: 0.5em;
+  color: rgb(25, 149, 169);
+  background-color: #111111;
+}
+.announcementContent .page .currentPageTxt input[type=number]::-webkit-outer-spin-button, .announcementContent .page .currentPageTxt input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.announcementContent .page .upPage, .announcementContent .page .downPage {
+  cursor: pointer;
+  font-size: 1.15rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(25, 149, 169);
+  color: rgb(255, 255, 255);
+}
+.announcementContent .page .upPage:hover, .announcementContent .page .downPage:hover {
+  background-color: rgb(21, 106, 119);
 }

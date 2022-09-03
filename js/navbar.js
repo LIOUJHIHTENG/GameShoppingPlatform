@@ -37,8 +37,8 @@ $("body").on("click",function(){
     }
 })
 
-$(".navbarList>ul").on("click",function(e){
-    e.stopPropagation();
+$(".navbarList>a").on("click",function(e){
+    e.preventDefault();
 })
 
 function getJson(json){

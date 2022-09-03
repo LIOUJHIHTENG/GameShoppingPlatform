@@ -28,6 +28,7 @@ $modal-bgColor:rgb(36,36,36,0.5);
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 2;
     background-color: $modal-bgColor;
 }
 
@@ -53,7 +54,7 @@ $modal-bgColor:rgb(36,36,36,0.5);
 header{
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 3;
     background-color:$header-bgColor;
     @include flex(row,space-between,center);
     height: 70px;
@@ -177,7 +178,7 @@ main{
         left: -350px;
         right: 0;
         bottom: 0;
-        z-index: 1;
+        z-index: 3;
         background-color: $header-bgColor;
         transition: 0.5s;
         overflow-y: auto;

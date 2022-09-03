@@ -8,6 +8,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 2;
   background-color: rgba(36, 36, 36, 0.5);
 }
 
@@ -33,7 +34,7 @@
 header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: rgb(52, 58, 64);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,7 +194,7 @@ main {
     left: -350px;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 3;
     background-color: rgb(52, 58, 64);
     -webkit-transition: 0.5s;
     transition: 0.5s;

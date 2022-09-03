@@ -16,7 +16,7 @@ function getAnnouncementData(currentPage){
     })
 
     function createAnnouncementDom(data,page,size){
-        $(".announcementTable .data").html("");
+        $(".announcementContent .data").html("");
         totalPages=Math.ceil(data.length/pageSize);
         let firstIndex=size*(page-1);
         let lastIndex=(size*page)-1;
@@ -29,7 +29,7 @@ function getAnnouncementData(currentPage){
                     <div>【${arr[firstIndex].label}】${arr[firstIndex].title}</div>
                     <div>${arr[firstIndex].date}</div>
                     <div>
-                        <button data-id=${arr[firstIndex].id}>查看詳情</button>
+                        <button class="detailBtn" data-id=${arr[firstIndex].id}>查看詳情</button>
                     </div>
                 </li>
             `;
@@ -37,7 +37,7 @@ function getAnnouncementData(currentPage){
                 return domStr;
             }
         }).join("");
-        $(".announcementTable .data").append(domElements);
+        $(".announcementContent .data").append(domElements);
     }
 }
 

@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首頁</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5260/5260498.png" type="image/x-icon">
+    <title>遊戲販賣平台</title>
     <link rel="stylesheet" href="./css/cssReset.css">
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/index/index.css">
     <link rel="stylesheet" href="./css/index/slideImg.css">
     <link rel="stylesheet" href="./css/index/announcement.css">
+    <link rel="stylesheet" href="./css/index/leaderboard.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="./js/navbar.js" defer></script>
     <script src="./js/slideImg.js" defer></script>
     <script src="./js/announcement.js" defer></script>
+    <script src="./js/leaderboard.js" defer></script>
 </head>
 <body>
     <div class="modal"></div>
@@ -48,7 +51,7 @@
                 </ul>
             </li>
             <li>
-                <a href="./about.html">關於我們</a>
+                <a href="./about.html">關於網站</a>
             </li>
         </ul>
     </div>
@@ -165,11 +168,11 @@
             </div>
             <div class="announcement">
                 <div class="title">
-                    <span>最新公告</span>
+                    最新公告
                 </div>
                 <div class="content">
-                    <div class="announcementTable">
-                        <div class="label">
+                    <div class="announcementContent">
+                        <div class="attr">
                             <div>
                                 標題
                             </div>
@@ -191,13 +194,50 @@
                 </div>
             </div>
             <div class="leaderboard">
-                <div class="title">
-                    <span>銷售排行榜</span>
+                <div class="typeLeaderboard leaderboardTable">
+                    <div class="title">
+                        遊戲種類銷售排行榜
+                    </div>
+                    <div class="content">
+                        <div class="label">
+
+                        </div>
+                        <div class="leaderboardContent">
+                                <div class="attr">
+                                    <div>名次</div>
+                                    <div></div>
+                                    <div>遊戲名稱</div>
+                                    <div>銷售量</div>
+                                </div>
+                                <ul class="data">
+
+                                </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="content">
-                    
+                <div class="hostLeaderboard leaderboardTable">
+                    <div class="title">
+                       主機遊戲銷售排行榜
+                    </div>
+                    <div class="content">
+                        <div class="label">
+
+                        </div>
+                        <div class="leaderboardContent">
+                                <div class="attr">
+                                    <div>名次</div>
+                                    <div></div>
+                                    <div>遊戲名稱</div>
+                                    <div>銷售量</div>
+                                </div>
+                                <ul class="data">
+
+                                </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </main>
     </div>
 </body>

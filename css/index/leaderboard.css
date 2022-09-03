@@ -1,0 +1,44 @@
+.leaderboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.leaderboard .leaderboardTable {
+  width: 100%;
+  margin: 0 1rem;
+}
+.leaderboard .content .label {
+  min-height: 50px;
+}
+.leaderboard .content .leaderboardContent {
+  background-color: rgba(26, 31, 34, 0.8);
+  border-radius: 10px;
+}
+.leaderboard .content .leaderboardContent :is(.attr) {
+  font-weight: bolder;
+  padding: 1rem 0.5rem;
+}
+.leaderboard .content .leaderboardContent :is(.attr, .data) {
+  text-align: center;
+}
+.leaderboard .content .leaderboardContent :is(.attr, .data) div:is(:first-of-type) {
+  width: 15%;
+}
+.leaderboard .content .leaderboardContent :is(.attr, .data) div:is(:nth-of-type(2)) {
+  width: 30%;
+}
+.leaderboard .content .leaderboardContent :is(.attr, .data) div:is(:nth-of-type(3)) {
+  width: 35%;
+}
+.leaderboard .content .leaderboardContent :is(.attr, .data) div:is(:last-of-type) {
+  width: 20%;
+}
+.leaderboard .content .leaderboardContent .data > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0.5rem;
+}

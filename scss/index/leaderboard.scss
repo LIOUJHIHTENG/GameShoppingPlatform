@@ -1,0 +1,47 @@
+.leaderboard{
+    display: flex;
+    .leaderboardTable{
+        width: 100%;
+        margin: 0 1rem ;
+    }
+    .content{
+        .label{
+            min-height: 50px;
+        }
+
+        .leaderboardContent{
+            background-color: rgba(26,31,34,0.8);
+            border-radius: 10px;
+            :is(.attr){
+                font-weight: bolder;
+                padding:1rem 0.5rem;
+            }
+
+            :is(.attr,.data){
+                text-align: center;
+            }
+
+            :is(.attr,.data)div:is(:first-of-type){
+                width: 15%
+            ;}
+
+            :is(.attr,.data)div:is(:nth-of-type(2)){
+                width: 30%
+            ;}
+
+            :is(.attr,.data)div:is(:nth-of-type(3)){
+                width: 35%
+            ;}
+
+            :is(.attr,.data)div:is(:last-of-type){
+                width: 20%
+            ;}
+
+            .data>li{
+                display: flex;
+                align-items: center;
+                padding:1rem 0.5rem;
+            }
+        }
+    }
+}
