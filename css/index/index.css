@@ -3,6 +3,3 @@
   padding: 1em;
   border-bottom: 1px solid rgb(255, 255, 255);
 }
-.title + .content {
-  padding: 1rem 0;
-}

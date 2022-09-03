@@ -20,14 +20,14 @@ function createFilterLabelDoms(data,ele){
             return
         }
         let dom=`
-        <span>
+        <div>
             <input type="radio" name="${Object.keys(data[0])[0]}" id="${item.label}" value="${item.label}">
             <label for="${item.label}">${item.name}</label>
-        </span>`;
+        </div>`;
         return dom;
     }).join("");
     $(ele).append(domElement);
-    $(`${ele} span:first-of-type input[type=radio]`).prop("checked",true);
+    $(`${ele} div:first-of-type input[type=radio]`).prop("checked",true);
 }
 
 let hostStr="PS4";
@@ -57,7 +57,6 @@ function getGame(json,type="allType",host="PS4"){
 
 
 function createTypeLeaderDoms(data,type){
-    let num=0;
     data.sort(function(a,b){
         return b.sales-a.sales;
     })

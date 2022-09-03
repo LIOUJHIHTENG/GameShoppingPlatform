@@ -9,6 +9,9 @@
 }
 
 /*最新公告*/
+.announcementContent {
+  margin-top: 1rem;
+}
 .announcementContent .attr {
   background-color: rgb(65, 65, 65);
   text-align: center;
