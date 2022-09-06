@@ -177,7 +177,7 @@ header .logo {
 
 main {
   max-width: 95%;
-  margin: 0 auto;
+  margin: 1rem auto;
   color: white;
 }
 
@@ -260,7 +260,5 @@ main {
 
   main {
     max-width: 100%;
-    margin: 0 auto;
-    color: white;
   }
 }

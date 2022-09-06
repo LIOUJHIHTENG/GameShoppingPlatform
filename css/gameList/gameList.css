@@ -1,0 +1,74 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.filter {
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.gameList {
+  width: calc(100% - 300px - 1rem);
+}
+
+.game a:hover {
+  background-color: rgba(156, 194, 217, 0.9);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: rgb(18, 30, 41);
+}
+.game:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.game img {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.game .desc {
+  -ms-flex-preferred-size: calc(100% - 300px);
+      flex-basis: calc(100% - 300px);
+  padding: 0.5rem;
+}
+.game .desc .name {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.game .desc .type {
+  margin: 1rem 0;
+}
+.game .price {
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 125px;
+  background-color: rgb(18, 30, 41);
+  border-radius: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  overflow: hidden;
+}
