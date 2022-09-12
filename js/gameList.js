@@ -8,6 +8,7 @@ let currentPage=1;
 let pageSize=5;
 let totalPages=0;
 let leftRight=2;
+let filterAttr="";
 
 function getHostTypeTitle(url,id){
     $.ajax({
@@ -37,7 +38,7 @@ if(params.has("type")){
                     return item
             })
             hosatOrTypeName=filterData[0].name;
-            getGame();
+            getGame(filterAttr);
         }
     })
 }
@@ -55,12 +56,12 @@ if(params.has("host")){
                     return item
             })
             hosatOrTypeName=filterData[0].name;
-            getGame();
+            getGame(filterAttr);
         }
     })
 }
 
-function getGame(){
+function getGame(filterAttr){
     let gameJson="../json/game.json";
     $.ajax({
         url:gameJson,
@@ -73,6 +74,9 @@ function getGame(){
                         return item;
                     }
                 })
+            }
+            if(filterAttr!==undefined){
+                data=filterData(data,filterAttr);
             }
             createGameListDoms(data);
             createPaginationDoms();
@@ -193,7 +197,7 @@ $(document).on("click",".numberPageBtn>button",function(){
    if(currentPage===undefined){
     return;
    }
-   getGame();
+   getGame(filterAttr);
 })
 
 $(".previousPageBtn").on("click",function(){
@@ -203,7 +207,7 @@ $(".previousPageBtn").on("click",function(){
     }
     $(".previousPageBtn").css("display","block")
     currentPage--;
-    getGame();
+    getGame(filterAttr);
 })
 
 $(".nextPageBtn").on("click",function(){
@@ -211,25 +215,71 @@ $(".nextPageBtn").on("click",function(){
         return;
     }
     currentPage++;
-    getGame();
+    getGame(filterAttr);
 })
 
-$(".filter input[name='price']").on("change",function(e){
-    let value=$(this).val()
-    console.log(value)
+$(".filter input[name='filter']").on("change",function(e){
+    filterAttr=$(this).val()
+    getGame(filterAttr);
 })
 
-$(".filter input[name='sell']").on("change",function(e){
-    let value=$(this).val()
-    console.log(value)
-})
+function filterData(data,filterAttr){
+    switch(filterAttr){
+        case "priceDown":
+            return priceDown(data);
+        case "priceUp":
+            return priceUp(data);
+        case "sellDown":
+            return sellDown(data);
+        case "sellUp":
+            return sellUp(data);
+        case "launchDateDown":
+            return launchDateDown(data);
+        case "launchDateUp":
+            return launchDateUp(data);
+        default:
+            return data;
+    }
+}
 
-function filter(){
+function priceDown(data){
+    data.sort(function(a,b){
+        return b.price-a.price;
+    })
+    return data;
+}
+
+function priceUp(data){
+    data.sort(function(a,b){
+        return a.price-b.price;
+    })
+    return data;
+}
+
+function sellDown(data){
     data.sort(function(a,b){
         return b.sales-a.sales;
     })
+    return data;
+}
 
+function sellUp(data){
     data.sort(function(a,b){
         return a.sales-b.sales;
     })
+    return data;
+}
+
+function launchDateDown(data){
+    data.sort(function(a,b){
+        return new Date(b.launchDate)-new Date(a.launchDate);
+    })
+    return data;
+}
+
+function launchDateUp(data){
+    data.sort(function(a,b){
+        return new Date(a.launchDate)-new Date(b.launchDate);
+    })
+    return data;
 }

@@ -114,11 +114,11 @@
                         <h2>價格</h2>
                         <ul>
                             <li>
-                                <input type="radio" id="priceDown" name="price" value="priceDown">
+                                <input type="radio" id="priceDown" name="filter" value="priceDown">
                                 <label for="priceDown" >價格由高到低</label>
                             </li>
                             <li>
-                                <input type="radio" id="priceUp" name="price" value="priceUp">
+                                <input type="radio" id="priceUp" name="filter" value="priceUp">
                                 <label for="priceUp">價格由低到高</label>
                             </li>
                         </ul>
@@ -127,12 +127,25 @@
                         <h2>銷售量</h2>
                         <ul>
                             <li>
-                                <input type="radio" id="sellDown" name="sell" value="sellDown">
+                                <input type="radio" id="sellDown" name="filter" value="sellDown">
                                 <label for="sellDown">銷售量由高到低</label>
                             </li>
                             <li>
-                                <input type="radio" id="sellUp" name="sell" value="sellUp">
-                                <label for="sellUp">銷售量由高到低</label>
+                                <input type="radio" id="sellUp" name="filter" value="sellUp">
+                                <label for="sellUp">銷售量由低到高</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div  class="filter">
+                        <h2>發售日期</h2>
+                        <ul>
+                            <li>
+                                <input type="radio" id="launchDateDown" name="filter" value="launchDateDown">
+                                <label for="launchDateDown">發售日期由最新到舊</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="launchDateUp" name="filter" value="launchDateUp">
+                                <label for="launchDateUp">發售日期由最舊到新</label>
                             </li>
                         </ul>
                     </div>
