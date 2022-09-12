@@ -3,26 +3,91 @@ main{
     flex-direction: row;
 }
 
-.filter{
+.filterList{
     width: 300px;
     margin-right: 1rem;
+    color:rgb(255,255,255);
+    font-size: 1.5rem;
+    .header{
+        padding: 1rem;
+        border-bottom: 1px solid rgb(255,255,255);
+    }
+
+    .content{
+        color:rgb(18,30,41);
+        background-color: rgb(255,255,255);
+        margin-top: 1rem;
+        border-radius: 5px;
+        .filter{
+            h2{
+                padding: 1rem;
+                border-bottom: 1px solid rgb(18,30,41);
+            }
+
+            ul{
+                padding: 1rem;
+                li:first-of-type{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+    }
 }
 
-.gameList{
+.gameGroup{
     width: calc(100% - 300px - 1rem);
 }
 
+
+.page,.numberPageBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+
+    button{
+        margin: 0;
+        cursor: pointer;
+        border:none;
+        background-color: rgb(25,149,169);
+        color:rgb(255,255,255);
+        padding:0.7em;
+        font-size: 1.2rem;
+    }
+
+    &>button:not(:last-of-type),
+    .numberPageBtn>button{
+        border-right:1px solid rgb(15, 80, 90);
+    }
+
+    &>button:first-of-type{
+        border-radius: 5px 0 0 5px;
+    }
+
+    &>button:last-of-type{
+        border-radius: 0 5px 5px 0;
+    }
+
+    .numberPageBtn .currentShow{
+        background-color: rgb(52,58,64);
+    }
+}
+
 .game{
+    margin-bottom: 1rem;
     a{
         &:hover{
             background-color: rgba(156,194,217,0.9);
             transition: all 0.2s;
             color: rgba(18, 30, 41,1);
         }
-    }
-
-    &:not(:last-of-type){
-        margin-bottom: 1rem;
     }
 
     img{
@@ -61,9 +126,4 @@ main{
     border-radius: 5px;
     transition: all 0.2s;
     overflow: hidden;
-
-    &:hover {
-
-    }
-
 }

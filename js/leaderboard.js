@@ -69,6 +69,7 @@ function createTypeLeaderDoms(data,type){
     }else{
         filterData=data.filter(function(item){
             if(item.type===type){
+                console.log(123)
                 return item;
             }
         })

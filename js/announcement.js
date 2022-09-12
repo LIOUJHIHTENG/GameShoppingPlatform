@@ -8,7 +8,7 @@ function getAnnouncementData(currentPage){
         method:"get",
         dataType:"json",
         success:function(data){
-            createAnnouncementDom([...data],currentPage,pageSize);
+            createAnnouncementDom(data,currentPage,pageSize);
         },
         error:function(){
             console.log("失敗!")

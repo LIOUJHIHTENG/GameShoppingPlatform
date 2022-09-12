@@ -105,11 +105,54 @@
         </header>
         <!--主要內容-->
         <main>
-            <div class="filter">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, in aliquid minus minima accusamus dolor expedita ad praesentium, libero dolores ducimus voluptatem? Incidunt eaque velit temporibus adipisci. Delectus atque molestias recusandae incidunt ducimus ab tempora, adipisci sapiente eveniet corporis, perferendis eum reprehenderit obcaecati debitis itaque sit beatae perspiciatis velit consectetur laborum voluptatibus quibusdam consequuntur! Expedita tempora consectetur ipsum labore! Nihil fugit quo sed ducimus facere animi quaerat quia possimus sint impedit voluptate dolorem eveniet nam expedita officiis recusandae perferendis ullam, officia veniam suscipit debitis quam inventore! Qui ad, veniam praesentium quod quisquam a hic explicabo, quidem iure quis ullam laborum.
+            <div class="filterList">
+                <div class="header">
+                    篩選器
+                </div>
+                <div class="content">
+                    <div class="filter">
+                        <h2>價格</h2>
+                        <ul>
+                            <li>
+                                <input type="radio" id="priceDown" name="price" value="priceDown">
+                                <label for="priceDown" >價格由高到低</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="priceUp" name="price" value="priceUp">
+                                <label for="priceUp">價格由低到高</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div  class="filter">
+                        <h2>銷售量</h2>
+                        <ul>
+                            <li>
+                                <input type="radio" id="sellDown" name="sell" value="sellDown">
+                                <label for="sellDown">銷售量由高到低</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="sellUp" name="sell" value="sellUp">
+                                <label for="sellUp">銷售量由高到低</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <ul class="gameList">
+            <ul class="gameGroup">
+                <div class="gameList">
 
+                </div>
+                <div class="page">
+                    <button class="previousPageBtn">
+                        <
+                    </button>
+                    <div class="numberPageBtn">
+                        
+                    </div>
+                    <button class="nextPageBtn">
+                        >
+                    </button>
+                </div>
             </ul>
         </main>
     </div>
