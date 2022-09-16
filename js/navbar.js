@@ -32,7 +32,6 @@ $("body").on("click",function(){
     }
 
     if($(".navbarToggle").find("i").hasClass("fa-xmark")){
-        console.log(456)
         $(".navbarToggle").find("i").removeClass("fa-xmark").addClass("fa-bars");
     }
 })

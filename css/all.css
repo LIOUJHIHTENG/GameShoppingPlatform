@@ -26,10 +26,6 @@
   z-index: -2;
 }
 
-.show {
-  display: block !important;
-}
-
 /*標頭(logo+搜尋+導覽列)*/
 header {
   position: sticky;
@@ -61,6 +57,7 @@ header .logo {
 }
 
 .search {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,11 +77,9 @@ header .logo {
   font-size: 1.25rem;
   padding: 0.35em;
   border-radius: 5px;
-  margin-right: 0.5rem;
 }
 .search .searchTxt:focus {
   outline: none;
-  border: 2px solid rgb(34, 124, 214);
 }
 .search .searchTxt:not(:-moz-placeholder-shown) + .searchBtn {
   display: block;
@@ -95,6 +90,9 @@ header .logo {
 .search .searchTxt:not(:placeholder-shown) + .searchBtn {
   display: block;
 }
+.search .searchTxt:has(~ .searchResultList > li) {
+  border-radius: 5px 5px 0 0;
+}
 .search .searchBtn {
   background-color: transparent;
   border: 1px solid rgb(128, 128, 128);
@@ -104,12 +102,40 @@ header .logo {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   display: none;
+  margin-left: 0.5rem;
 }
 .search .searchBtn:hover {
   background-color: rgb(128, 128, 128);
   color: rgb(255, 255, 255);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+.search .searchResultList {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 37px;
+  left: 0;
+  right: 0;
+  width: 257.61px;
+}
+.search .searchResultList li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  color: rgb(0, 0, 0);
+}
+.search .searchResultList li a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(65, 65, 65);
 }
 
 .navbar {
@@ -174,6 +200,9 @@ header .logo {
   padding: 1em;
   border-right: none;
 }
+.navbar .navbarList ul.show {
+  display: block;
+}
 
 main {
   max-width: 95%;
@@ -214,6 +243,9 @@ main {
   }
   .mobileNavbar ul .navbarList ul li:hover a {
     color: rgb(52, 58, 64);
+  }
+  .mobileNavbar ul .navbarList ul.show {
+    display: block;
   }
   .mobileNavbar .search {
     display: -webkit-box;

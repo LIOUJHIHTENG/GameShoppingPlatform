@@ -13,7 +13,6 @@ $searchBtn-hover-color:rgb(255,255,255);
 $searchBtn-padding:0.75em;
 $navbarList-border:1px solid rgb(255,255,255);
 $modal-bgColor:rgb(36,36,36,0.5);
-
 @mixin  flex($flex-direction,$justify-content,$align-items){
     display: flex;
     flex-direction: $flex-direction;
@@ -46,10 +45,6 @@ $modal-bgColor:rgb(36,36,36,0.5);
     z-index: -2;
 }
 
-.show{
-    display: block !important;
-}
-
 /*標頭(logo+搜尋+導覽列)*/
 header{
     position: sticky;
@@ -71,25 +66,28 @@ header{
 }
 
 .search{
+    position: relative;
     @include flex(row,flex-start,center);
     .searchTxt{
         border:none;
         font-size: $search-text-font-size;
         padding:$search-text-padding;
         border-radius: 5px;
-        margin-right: 0.5rem;
 
         &:focus{
             outline:none;
-            border:2px solid $search-text-focus-border-Color
         }
 
         &:not(:placeholder-shown)
         +.searchBtn{
             display: block;
         }
+
+        &:has(~.searchResultList>li){
+            border-radius: 5px 5px 0 0;
+        }
     }
-    
+
     .searchBtn{
         background-color: transparent;
         border:1px solid $searchBtn-hover-bgColor;
@@ -98,11 +96,35 @@ header{
         color:$searchBtn-hover-bgColor;
         transition: 0.2s;
         display: none;
+        margin-left: 0.5rem;
 
         &:hover{
             background-color: $searchBtn-hover-bgColor;
             color:$searchBtn-hover-color;
             transition: 0.2s;
+        }
+    }
+
+    .searchResultList{
+        position:absolute;
+        background-color: rgb(255,255,255);
+        top:37px;
+        left: 0;
+        right: 0;
+        width: 257.61px;
+        li{
+            a{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1.2rem;
+                padding: 0.5em;
+                color:rgb(0,0,0);
+                &:hover{
+                    color:rgb(255,255,255);
+                    background-color:rgb(65,65,65)
+                }
+            }
         }
     }
 }
@@ -147,6 +169,9 @@ header{
             a{
                 padding: 1em;
                 border-right: none;
+            }
+            &.show{
+                display: block;
             }
         }
     }
@@ -198,6 +223,9 @@ main{
                         a{
                             color:rgb(52,58,64);
                         }
+                    }
+                    &.show{
+                        display: block
                     }
                 }
             }

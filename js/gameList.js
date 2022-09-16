@@ -1,8 +1,11 @@
+let gameJson="../json/game.json";
+
 const url = new URL(window.location.href);
 let params=url.searchParams;
 let typeId=Number(params.get("type"));
 let hostId=Number(params.get("host"));
-let hosatOrTypeName="";
+let searchText=params.get("searchText");
+let hosatOrTypeLabel="";
 
 let currentPage=1;
 let pageSize=5;
@@ -26,10 +29,9 @@ function changeTitle(json,id){
 }
 
 if(params.has("type")){
-    let  typeJson="../json/type.json";
-    getHostTypeTitle(typeJson,typeId);
+    getHostTypeTitle("../json/type.json",typeId);
     $.ajax({
-        url:typeJson,
+        url:"../json/type.json",
         method:"get",
         type:"json",
         success:function(data){
@@ -37,17 +39,16 @@ if(params.has("type")){
                 if(typeId===item.type)
                     return item
             })
-            hosatOrTypeName=filterData[0].name;
-            getGame(filterAttr);
+            hosatOrTypeLabel=filterData[0].label;
+            getGame();
         }
     })
 }
 
 if(params.has("host")){
-    let  hostJson="../json/host.json";
-    getHostTypeTitle(hostJson,hostId);
+    getHostTypeTitle("../json/host.json",hostId);
     $.ajax({
-        url:hostJson,
+        url:"../json/host.json",
         method:"get",
         type:"json",
         success:function(data){
@@ -55,28 +56,42 @@ if(params.has("host")){
                 if(hostId===item.host)
                     return item
             })
-            hosatOrTypeName=filterData[0].name;
-            getGame(filterAttr);
+            hosatOrTypeLabel=filterData[0].label;
+            getGame();
         }
     })
 }
 
-function getGame(filterAttr){
-    let gameJson="../json/game.json";
+if(params.has("searchText")){
+    document.title=`${searchText} 的搜尋結果`;
+    getGame();
+}
+
+function getGame(){
     $.ajax({
         url:gameJson,
         method:"get",
         type:"json",
         success:function(data){
-            if(hosatOrTypeName!=="所有主機"&&hosatOrTypeName!=="所有類型"){
-                data=data.filter(function(item){
-                    if(hosatOrTypeName===item.type||hosatOrTypeName===item.host){
-                        return item;
-                    }
+            if(params.has("host")||params.has("type")){
+                if(hosatOrTypeLabel!=="allHost"&&hosatOrTypeLabel!=="allType"){
+                    data=data.filter(function(item){
+                        if(hosatOrTypeLabel===item.type||hosatOrTypeLabel===item.host){
+                            return item;
+                        }
+                    })
+                }
+            }
+
+            if(params.has("searchText")){
+                    data=data.filter(function(item){
+                    let gameName=item.name.toLowerCase();
+                    return gameName.includes(searchText);
                 })
             }
-            if(filterAttr!==undefined){
-                data=filterData(data,filterAttr);
+            
+            if(filterAttr!==""){
+                data=filterData(data);
             }
             createGameListDoms(data);
             createPaginationDoms();
@@ -123,23 +138,25 @@ function createGameListDoms(data){
 }
 
 function createPaginationDoms(){
-    $(".previousPageBtn").css("display","block");
-    $(".nextPageBtn").css("display","block");
-
-    if(currentPage<=1){
-        $(".previousPageBtn").css("display","none")
+    let dom="";
+    $(".previousPageBtn").css("display","none");
+    $(".nextPageBtn").css("display","none");
+    if(currentPage<totalPages&&totalPages>1){
+        $(".nextPageBtn").css("display","block");
     }
 
-    if(currentPage>=totalPages){
-        $(".nextPageBtn").css("display","none")
+    if(currentPage!=1&&totalPages>1){
+        $(".previousPageBtn").css("display","block");
     }
     $(".numberPageBtn").html("");
 
-     let dom=`
+    if(totalPages!==1){
+        dom=`
         <button data-page="1">
             1
         </button>
     `;
+    }
 
     for(let page=currentPage-leftRight;page<currentPage;page++){
         if(page<=1){
@@ -161,33 +178,37 @@ function createPaginationDoms(){
     }
 
     for(let page=currentPage;page<=currentPage+leftRight;page++){
-        if(page===1){
-            continue;
-        }
-
         if(page===totalPages){
             break;
         }
-        dom+=`
-        <button data-page="${page}">
-            ${page}
-        </button>
-        `;
 
-        if(page===currentPage+2){
+        if(page===1){
+            continue;
+        }
+        else{
             dom+=`
-                <button>
-                    ...
-                </button>
+            <button data-page="${page}">
+                ${page}
+            </button>
             `;
+    
+            if(page===currentPage+2){
+                dom+=`
+                    <button>
+                        ...
+                    </button>
+                `;
+            }
         }
     }
 
-    dom+=`
+    if(totalPages!==1){
+        dom+=`
         <button data-page="${totalPages}">
             ${totalPages}
         </button>
     `;
+    }
     $(".numberPageBtn").append(dom);
     $(`.numberPageBtn>button[data-page=${currentPage}]`).addClass("currentShow");
 }
@@ -197,7 +218,7 @@ $(document).on("click",".numberPageBtn>button",function(){
    if(currentPage===undefined){
     return;
    }
-   getGame(filterAttr);
+   getGame();
 })
 
 $(".previousPageBtn").on("click",function(){
@@ -207,7 +228,7 @@ $(".previousPageBtn").on("click",function(){
     }
     $(".previousPageBtn").css("display","block")
     currentPage--;
-    getGame(filterAttr);
+    getGame();
 })
 
 $(".nextPageBtn").on("click",function(){
@@ -215,15 +236,15 @@ $(".nextPageBtn").on("click",function(){
         return;
     }
     currentPage++;
-    getGame(filterAttr);
+    getGame();
 })
 
 $(".filter input[name='filter']").on("change",function(e){
     filterAttr=$(this).val()
-    getGame(filterAttr);
+    getGame();
 })
 
-function filterData(data,filterAttr){
+function filterData(data){
     switch(filterAttr){
         case "priceDown":
             return priceDown(data);

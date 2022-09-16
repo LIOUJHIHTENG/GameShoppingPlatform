@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/index/leaderboard.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="./js/navbar.js" defer></script>
+    <script src="./js/search.js" defer></script>
     <script src="./js/slideImg.js" defer></script>
     <script src="./js/announcement.js" defer></script>
     <script src="./js/leaderboard.js" defer></script>
@@ -23,12 +24,14 @@
     <div class="mobileNavbar">
         <ul>
             <li>
-                <div class="search">
+                <form class="search">
                     <input type="text" placeholder="遊戲搜尋" class="searchTxt">
                     <button class="searchBtn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                </div>
+                    <ul class="searchResultList">
+                    </ul>
+                </form>
             </li>
             <li class="navbarList typeNavbarList">
                 <a href="#">
@@ -73,6 +76,8 @@
                 <button class="searchBtn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <ul class="searchResultList">
+                </ul>
             </form>
             <nav>
                 <ul class="navbar">
