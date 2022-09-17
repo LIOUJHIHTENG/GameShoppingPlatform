@@ -110,3 +110,49 @@
 .announcementContent .page .upPage:hover, .announcementContent .page .downPage:hover {
   background-color: rgb(21, 106, 119);
 }
+
+.announcementDialog:modal {
+  padding: 0;
+  width: 50vw;
+  border-radius: 10px;
+}
+.announcementDialog:modal .announcementDialogContent {
+  width: 100%;
+  height: 100%;
+}
+.announcementDialog:modal .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(17, 20, 21);
+}
+.announcementDialog:modal .header .closeAnnouncementDialog {
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  background-color: rgb(255, 255, 255);
+}
+.announcementDialog:modal .content {
+  padding: 1rem;
+}
+.announcementDialog:modal .content div:first-of-type {
+  margin-bottom: 1rem;
+}
+.announcementDialog:modal .content div:last-of-type {
+  line-height: 2rem;
+}
+
+.announcementDialog::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.announcementDialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
