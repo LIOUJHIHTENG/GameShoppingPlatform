@@ -17,7 +17,6 @@ function getAnnouncementData(currentPage){
     })
 
     function createAnnouncementDom(data,page,size){
-        console.log(page,size)
         $(".announcementContent .data").html("");
         totalPages=Math.ceil(data.length/pageSize);
         let firstIndex=size*(page-1);
@@ -69,10 +68,8 @@ $(".downPage").on("click",function(){
 })
 
 currentPageTxt.on("keyup",function(e){
-    console.log(totalPages)
     if(e.key==="Enter"){
         let currentPageNum=Number($(".currentPageTxt input[type=number]").val());
-        console.log(currentPageNum)
         if(currentPageNum<=0||currentPageNum>totalPages){
             currentPageTxt.val(1);
             getAnnouncementData(1);

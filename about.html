@@ -11,6 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="./js/navbar.js" defer></script>
     <script src="./js/search.js" defer></script>
+    <script src="./js/account.js" defer></script>
+    <script src="./js/accountLocalStorage.js" defer></script>
 </head>
 <body>
     <div class="modal"></div>
@@ -22,6 +24,8 @@
                     <button class="searchBtn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
+                    <ul class="searchResultList">
+                    </ul>
                 </div>
             </li>
             <li class="navbarList typeNavbarList">
@@ -67,14 +71,16 @@
                 <button class="searchBtn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <ul class="searchResultList">
+                </ul>
             </form>
             <nav>
                 <ul class="navbar">
                     <li>
-                        <a href="./login.html">登入</a>
+                        <a href="./login.html" class="navbarAccount navbarLogin">登入</a>
                     </li>
                     <li>
-                        <a href="./register.html">註冊</a>
+                        <a href="./register.html" class="navbarAccount navbarRegister">註冊</a>
                     </li>
                     <li class="navbarList typeNavbarList">
                         <a href="#">

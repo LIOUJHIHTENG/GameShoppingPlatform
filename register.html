@@ -8,9 +8,16 @@
     <title>註冊會員</title>
     <link rel="stylesheet" href="./css/cssReset.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/account/account.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="./js/navbar.js" defer></script>
     <script src="./js/search.js" defer></script>
+    <script src="./js/account.js" defer></script>
+    <script src="./js/validate.js" defer></script>
+    <script src="./js/registerValidate.js" defer></script>
+    <script src="./js/accountLocalStorage.js"></script>
+    <script src="./js/account.js" defer></script>
+    <script src="./js/register.js" defer></script>
 </head>
 <body>
     <div class="modal"></div>
@@ -22,6 +29,8 @@
                     <button class="searchBtn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
+                    <ul class="searchResultList">
+                    </ul>
                 </div>
             </li>
             <li class="navbarList typeNavbarList">
@@ -67,6 +76,8 @@
                 <button class="searchBtn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <ul class="searchResultList">
+                </ul>
             </form>
             <nav>
                 <ul class="navbar">
@@ -104,7 +115,57 @@
         </header>
         <!--主要內容-->
         <main>
-            
+            <form class="account registerAccount">
+                <div class="form-input">
+                    <div class="input">
+                        <label for="accountTxt">
+                            <i class="fa-solid fa-user"></i>
+                        </label>
+                        <input type="text" id="accountTxt"  placeholder="請輸入至少8個字的帳號" data-empty="accountEmptyCheck"
+                        data-regex="accountNormalRegex"
+                        data-speciaregex="accountSpecialRegex"
+                        data-length="accountLength" data-registered="registeredAccount">
+                    </div>
+                    <div class="alert"></div>
+                </div>
+
+                <div class="form-input">
+                    <div class="input">
+                        <label for="passwordTxt">
+                            <i class="fa-solid fa-unlock-keyhole"></i>
+                        </label>
+                        <input type="password" id="passwordTxt"  placeholder="請輸入至少8個字的密碼" data-empty="passwordEmptyCheck" data-regex="passwordNormalRegex" data-speciaregex="passwordSpecialRegex"
+                        data-length="passwordLength"
+                        data-equal="accountNotPassword">
+                    </div>
+                    <div class="alert"></div>
+                </div>
+
+                <div class="form-input">
+                    <div class="input">
+                        <label for="PasswordConfrimTxt">
+                            <i class="fa-solid fa-lock-open"></i>
+                        </label>
+                        <input type="password" id="PasswordConfrimTxt"  placeholder="請再次輸入密碼" data-empty="passwordConfirmEmpty" data-confirm="passwordConfirm">
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="form-input">
+                    <div class="input">
+                        <label for="emailTxt">
+                            <i class="fa-solid fa-envelope"></i>
+                        </label>
+                        <input type="text" id="emailTxt"  placeholder="請輸入有效信箱" data-empty="emailEmpty" data-regex="emailRegex" data-registered="registeredEmail">
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="form-input">
+                    <input type="button" value="註冊" id="registerBtn">
+                </div>
+                <div class="form-input">
+                    <a href="./login.html">已有帳號?趕快登入!</a>
+                </div>
+            </form>
         </main>
     </div>
 </body>
