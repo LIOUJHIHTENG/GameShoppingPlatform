@@ -17,7 +17,7 @@ $("#loginBtn").on("click",function(){
 
     if(formValidation()){
         loginAccount(accountTxt.val(),passwordTxt.val());
-        window.location.assign("../index.html");
+        window.location.assign("https://lioujhihteng.github.io/GameShoppingPlatform-jquery/index.html");
     }
 })
 

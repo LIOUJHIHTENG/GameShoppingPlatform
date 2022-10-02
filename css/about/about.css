@@ -1,0 +1,106 @@
+.headerAbout {
+  text-align: center;
+  margin: 3rem 0;
+}
+.headerAbout .title {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+.headerAbout .content p {
+  text-indent: 4rem;
+  font-size: 1.3rem;
+  line-height: 2;
+  font-weight: bolder;
+}
+
+.mainAbout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.mainAbout .title, .mainAbout .content {
+  width: calc(50% + 35px);
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.mainAbout .title {
+  font-size: 2rem;
+  font-weight: bolder;
+  -webkit-text-stroke: 1px;
+}
+.mainAbout .content p {
+  margin: 0 5rem;
+  line-height: 2;
+  font-weight: bold;
+}
+.mainAbout .left {
+  translate: 35px;
+}
+.mainAbout .right {
+  translate: -35px;
+}
+
+.firstAbout .left {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+  background-color: rgb(87, 113, 148);
+}
+.firstAbout .right {
+  -webkit-clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.firstAbout .right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: url("https://ceblog.s3.amazonaws.com/wp-content/uploads/2018/03/01113506/image48.jpg");
+  background-size: cover;
+}
+
+.secondAbout .left {
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+}
+.secondAbout .left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: url("https://d1rytvr7gmk1sx.cloudfront.net/wp-content/uploads/2022/06/webstorm-vs-vscode.jpeg?x95853");
+  background-size: cover;
+}
+.secondAbout .right {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+  background-color: rgb(51, 51, 50);
+}

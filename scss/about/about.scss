@@ -1,0 +1,103 @@
+.headerAbout{
+    text-align: center;
+    margin: 3rem 0;
+
+    .title{
+        font-size: 1.2rem;
+        margin-bottom: 1.5em;
+    }
+
+    .content{
+        p{
+            text-indent: 4rem;
+            font-size: 1.3rem;
+            line-height: 2;
+            font-weight: bolder;
+        }
+    }
+}
+
+.mainAbout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .title,.content{
+        width: calc(50% + 35px);
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title{
+        font-size: 2rem;
+        font-weight: bolder;
+        -webkit-text-stroke: 1px;
+    }
+
+    .content{
+        p{
+            margin: 0 5rem;
+            line-height: 2;
+            font-weight: bold;
+        }
+    }
+
+    .left{
+        translate: 35px;
+    }
+
+    .right{
+        translate: -35px;
+    }
+}
+
+.firstAbout{
+    .left{
+        clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+        background-color: rgb(87,113,148);
+    }
+
+    .right{
+        clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+        &::before{
+            content: "";
+            position: absolute;
+            top:0;
+            right:0; 
+            bottom:0; 
+            left:0;
+            z-index: -1;
+            filter: blur(2px);
+            background-image: url("https://ceblog.s3.amazonaws.com/wp-content/uploads/2018/03/01113506/image48.jpg");
+            background-size: cover;
+        }
+    }
+}
+
+.secondAbout{
+    .left{
+        position: relative;
+        clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+
+        &::before{
+            content: "";
+            position: absolute;
+            top:0;
+            right:0; 
+            bottom:0; 
+            left:0;
+            z-index: -1;
+            filter: blur(2px);
+            background-image: url("https://d1rytvr7gmk1sx.cloudfront.net/wp-content/uploads/2022/06/webstorm-vs-vscode.jpeg?x95853");
+            background-size: cover;
+
+        }
+    }
+
+    .right{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+        background-color:rgb(51,51,50);
+    }
+}

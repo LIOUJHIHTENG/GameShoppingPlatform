@@ -33,5 +33,5 @@ if(getLoginAccountStatus()){
 
 $(".navbarRegister").on("click",function(){
     clearLoginAccount();
-    window.location.assign("../login.html");
+    window.location.assign("https://lioujhihteng.github.io/GameShoppingPlatform-jquery/login.html");
 })

@@ -2,14 +2,11 @@ $(document).ready(function(){
     renderRegisterAccount();
 })
 
-function formValidationCheck(){
+$("#registerBtn").on("click",function(){;
     if(formValidation()){
         registerToDatabase();
         clearRememberRegisterAccount();
+        window.location("https://lioujhihteng.github.io/GameShoppingPlatform-jquery/login.html");
     }
-}
-
-$("#registerBtn").on("click",function(){;
-    window.location.assign("../login.html");
-    formValidationCheck();
+    return;
 })
