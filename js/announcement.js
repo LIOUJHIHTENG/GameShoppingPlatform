@@ -5,7 +5,7 @@ let id=0;
 
 function getAnnouncementData(currentPage){
     $.ajax({
-        url:"../json/announcement.json",
+        url:"https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/announcement.json",
         method:"get",
         dataType:"json",
         success:function(data){
