@@ -1,6 +1,6 @@
 const url=new URL(window.location.href);
 let params=url.searchParams;
-let gameJson="../json/game.json";
+let gameJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/game.json";
 
 if(params.has("id")){
     let gameId=params.get("id");

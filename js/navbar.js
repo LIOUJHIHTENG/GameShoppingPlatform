@@ -74,11 +74,11 @@ function createTypeDoms(json){
     }
 }
 //抓取遊戲種類到下拉式選單內
-let  typeJson="../json/type.json";
+let  typeJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/type.json";
 getJson(typeJson);
 
 //抓取主機種類到下拉式選單內
-let  hostJson="../json/host.json";
+let  hostJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/host.json";
 getJson(hostJson);
 
 //mobile版本的右拉式選單

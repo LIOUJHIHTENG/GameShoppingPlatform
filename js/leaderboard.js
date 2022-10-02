@@ -1,4 +1,4 @@
-let gameJson="../json/game.json";
+let gameJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/game.json";
 getTypeHost(typeJson,".typeLeaderboard .label");
 getTypeHost(hostJson,".hostLeaderboard .label");
 getGame(gameJson,"allType","PS4");

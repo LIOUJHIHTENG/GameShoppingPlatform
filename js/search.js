@@ -70,7 +70,7 @@ function createSearchListDom(result){
 
 function getGameList(){
     $.ajax({
-        url:"../json/game.json",
+        url:"https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/game.json",
         method:"get",
         type:"json",
         success:function(result){

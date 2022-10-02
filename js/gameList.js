@@ -1,4 +1,4 @@
-let gameJson="../json/game.json";
+let gameJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/game.json";
 
 const url = new URL(window.location.href);
 let params=url.searchParams;
@@ -31,7 +31,7 @@ function changeTitle(json,id){
 if(params.has("type")){
     getHostTypeTitle("../json/type.json",typeId);
     $.ajax({
-        url:"../json/type.json",
+        url:"https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/type.json",
         method:"get",
         type:"json",
         success:function(data){
@@ -46,9 +46,9 @@ if(params.has("type")){
 }
 
 if(params.has("host")){
-    getHostTypeTitle("../json/host.json",hostId);
+    getHostTypeTitle("https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/host.json",hostId);
     $.ajax({
-        url:"../json/host.json",
+        url:"https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/host.json",
         method:"get",
         type:"json",
         success:function(data){
