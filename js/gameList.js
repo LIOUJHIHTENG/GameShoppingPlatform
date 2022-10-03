@@ -111,7 +111,7 @@ function createGameListDoms(data){
         if(firstDataIndex<=lastDataIndex){
             let dom=`
             <li class="game">
-                <a href="../gamePage.html?id=${arr[firstDataIndex].id}">
+                <a href="./gamePage.html?id=${arr[firstDataIndex].id}">
                     <img src="${arr[firstDataIndex].imgUrl}" alt="圖片已遺失">
                     <div class="desc">
                         <div class="name">

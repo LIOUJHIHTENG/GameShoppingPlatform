@@ -18,11 +18,9 @@
 }
 
 .mainAbout{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns:  1fr 1fr;
     .title,.content{
-        width: calc(50% + 35px);
         height: 500px;
         display: flex;
         flex-direction: row;
@@ -34,33 +32,40 @@
         font-size: 2rem;
         font-weight: bolder;
         -webkit-text-stroke: 1px;
+        grid-area: title;
     }
 
     .content{
+        grid-area: content;
         p{
             margin: 0 5rem;
             line-height: 2;
             font-weight: bold;
         }
     }
-
-    .left{
-        translate: 35px;
-    }
-
-    .right{
-        translate: -35px;
-    }
 }
 
 .firstAbout{
+    grid-template-areas: 
+    "content title";
     .left{
-        clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+        position: relative;
         background-color: rgb(87,113,148);
+        &::before{
+            content: "";
+            position: absolute;
+            right: -100px;
+            height: 0px; 
+            width: 0px; 
+            border-color: rgb(87,113,148) transparent transparent rgb(87,113,148);
+            border-style: solid;
+            border-width: 250px 50px;
+        }
     }
 
     .right{
         clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+        position: relative;
         &::before{
             content: "";
             position: absolute;
@@ -77,6 +82,8 @@
 }
 
 .secondAbout{
+    grid-template-areas: 
+    "title content";
     .left{
         position: relative;
         clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
@@ -97,7 +104,43 @@
     }
 
     .right{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+        position: relative;
         background-color:rgb(51,51,50);
+        &::before{
+            content: "";
+            position: absolute;
+            left: -100px;
+            height: 0px; 
+            width: 0px; 
+            border-color: rgb(51,51,50) rgb(51,51,50) transparent transparent;
+            border-style: solid;
+            border-width: 250px 50px;
+        }
+    }
+}
+
+@media(max-width:850px){
+    .mainAbout{
+        grid-template-columns:  1fr;
+        grid-template-areas: 
+        "title"
+        "content";
+
+        .title{
+            height: 300px;
+        }
+
+        .content{
+            height: auto;
+            padding: 2rem 0;
+        }
+
+        .left,.right{
+            clip-path: none;
+            &::before{
+                border-width: 0;
+            }
+        }
+
     }
 }

@@ -14,17 +14,24 @@
         padding:1rem 0; 
         border-radius: 5px 5px 0 0;
         font-weight: bolder;
-        div:is(:nth-of-type(2),:last-of-type){
-            width: 25%;
-        }
     }
-    &>.attr>div:first-of-type,
-    &>.data>li>div:first-of-type{
-        width: 50%;
+    & .attr div:first-of-type{
+        width: 60%;
     }
-    &>.attr>div:is(:nth-of-type(2),:last-of-type),
-    &>.data>li>div:is(:nth-of-type(2),:last-of-type){
-        width: 25%;
+    
+    & .data li div:is(:first-of-type,:nth-of-type(2)){
+        width: 30%;
+    }
+
+
+    & .attr div:is(:nth-of-type(2)),
+    & .data li div:is(:nth-of-type(3)){
+        width: 20%;
+    }
+
+    & .attr div:is(:last-of-type),
+    & .data li div:is(:last-of-type){
+        width: 20%;
     }
 
     .data{
@@ -136,4 +143,32 @@
 
 .announcementDialog::backdrop{
     background: rgba(0, 0, 0, 0.7);
+}
+
+@media(max-width:800px){
+    .announcementContent{
+        .attr{
+            display: none;
+        }
+        .data{
+            li{
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 1rem;
+                div{
+                    margin:0.5rem 0;
+                    width: 100% !important;
+                }
+                button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.modal-hidden-scroll{
+    overflow-y: hidden;
+    height: 100vh;
 }

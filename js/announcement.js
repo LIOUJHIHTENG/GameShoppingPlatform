@@ -27,7 +27,8 @@ function getAnnouncementData(currentPage){
                     return;
                 let domStr=`
                 <li>
-                    <div>【${arr[firstIndex].label}】${arr[firstIndex].title}</div>
+                    <div>【${arr[firstIndex].label}】</div>
+                    <div>${arr[firstIndex].title}</div>
                     <div>${arr[firstIndex].date}</div>
                     <div>
                         <button class="detailBtn" data-id=${arr[firstIndex].id}>查看詳情</button>
@@ -85,14 +86,17 @@ $(document).on("click",".detailBtn",function(){
     id=$(this).data("id");
     getAnnouncementData(currentPage);
     announcementDialog.showModal();
+    $("body").addClass("modal-hidden-scroll");
 })
 
 $("body").on("click",".closeAnnouncementDialog",function(){
-    announcementDialog.close()
+    announcementDialog.close();
+    $("body").removeClass("modal-hidden-scroll");
 })
 
 $("body").on("click",".announcementDialog",function(e){
-    announcementDialog.close()
+    announcementDialog.close();
+    $("body").removeClass("modal-hidden-scroll");
 })
 
 $("body").on("click",".announcementDialogContent",function(e){
