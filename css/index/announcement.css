@@ -184,6 +184,9 @@
   .announcementContent .data li button {
     width: 100%;
   }
+  .announcementContent .announcementDialog:modal {
+    width: auto;
+  }
 }
 .modal-hidden-scroll {
   overflow-y: hidden;

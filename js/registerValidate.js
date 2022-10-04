@@ -251,7 +251,6 @@ function detectRegisteredData(target){
     }
 
     changeErrorStatusObj(errorType,errorStatus);
-    console.log(errorStatusObj)
 }
 
 $(".registerAccount input").on("blur",function(){

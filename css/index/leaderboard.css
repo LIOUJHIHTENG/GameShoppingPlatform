@@ -75,3 +75,22 @@
           align-items: center;
   padding: 1rem 0.5rem;
 }
+
+@media (max-width: 1000px) {
+  .content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 950px) {
+  .leaderboard .leaderboardTable {
+    width: 100%;
+    margin: 0;
+  }
+
+  .leaderboard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
