@@ -88,15 +88,13 @@ main {
   color: rgb(18, 30, 41);
 }
 .game img {
-  -ms-flex-preferred-size: 200px;
-      flex-basis: 200px;
+  width: 200px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .game .desc {
-  -ms-flex-preferred-size: calc(100% - 300px);
-      flex-basis: calc(100% - 300px);
+  width: calc(100% - 300px);
   padding: 0.5rem;
 }
 .game .desc .name {
@@ -106,9 +104,11 @@ main {
 .game .desc .type {
   margin: 1rem 0;
 }
+.game .desc .price {
+  display: none;
+}
 .game .price {
-  -ms-flex-preferred-size: 100px;
-      flex-basis: 100px;
+  width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,5 +149,27 @@ main {
 
   .filterList, .gameGroup {
     width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .game a {
+    height: 150px;
+  }
+  .game .price {
+    width: 0;
+    display: none;
+  }
+  .game .desc {
+    width: 100%;
+  }
+  .game .desc .name {
+    font-size: 1.2rem;
+  }
+  .game .desc .host {
+    margin-bottom: 1em;
+  }
+  .game .desc .price {
+    width: auto;
+    display: block;
   }
 }

@@ -123,6 +123,9 @@ function createGameListDoms(data){
                         <div class="host">
                         ${arr[firstDataIndex].host}
                         </div>
+                        <div class="price">
+                        NT$ ${arr[firstDataIndex].price}
+                    </div>
                     </div>
                     <div class="price">
                         NT$ ${arr[firstDataIndex].price}

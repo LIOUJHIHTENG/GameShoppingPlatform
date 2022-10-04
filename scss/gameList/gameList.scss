@@ -88,13 +88,13 @@ main{
     }
 
     img{
-        flex-basis: 200px;
+        width: 200px;
         height: 100%;
         object-fit: cover;
     }
 
     .desc{
-        flex-basis: calc(100% - 300px);
+        width: calc(100% - 300px);
         padding: 0.5rem;
 
         .name{
@@ -105,10 +105,14 @@ main{
         .type{
             margin: 1rem 0;
         }
+
+        .price{
+            display: none;
+        }
     }
 
     .price{
-        flex-basis:100px;
+        width:100px;
         display: flex;
         align-items: center;
     }
@@ -138,4 +142,34 @@ main{
     .filterList,.gameGroup{
         width: auto;
     }
+}
+
+@media(max-width:600px){
+    .game{
+        a{
+            height: 150px;
+        }
+
+        .price{
+            width: 0;
+            display: none;
+        }
+
+        .desc{
+            width: 100%;
+
+            .name{
+                font-size: 1.2rem;
+            }
+
+            .host{
+                margin-bottom: 1em;
+            }
+            .price{
+                width: auto;
+                display: block;
+            }
+        }
+    }
+
 }
