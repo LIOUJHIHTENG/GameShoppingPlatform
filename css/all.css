@@ -224,6 +224,9 @@ main {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
+  .mobileNavbar li:first-of-type {
+    padding: 1em;
+  }
   .mobileNavbar a {
     display: block;
     width: 100%;

@@ -202,12 +202,17 @@ main{
         z-index: 3;
         background-color: $header-bgColor;
         transition: 0.5s;
+
+        li:first-of-type{
+            padding:1em;
+        }
+
         a{
             display: block;
             width: 100%;
             padding:1em;
         }
-        
+
         .navbarList{
             ul{
                 display: none;
