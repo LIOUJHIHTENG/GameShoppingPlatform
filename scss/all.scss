@@ -203,7 +203,7 @@ main{
         background-color: $header-bgColor;
         transition: 0.5s;
 
-        li:first-of-type{
+        &>li:first-of-type{
             padding:1em;
         }
 
