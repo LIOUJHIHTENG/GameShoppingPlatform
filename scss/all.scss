@@ -202,36 +202,30 @@ main{
         z-index: 3;
         background-color: $header-bgColor;
         transition: 0.5s;
-            &>li{
-                padding:1em;
-            }
-    
-            .navbarList{
-                a{
-                    display: block;
-                    width: 100%;
-                }
-                ul{
-                    display: none;
-                    margin-top: 1rem;
-                    border:$navbarList-border;
-                    border-radius: 5px;
+        a{
+            display: block;
+            width: 100%;
+            padding:1em;
+        }
+        
+        .navbarList{
+            ul{
+                display: none;
+                margin-top: 1rem;
+                border:$navbarList-border;
+                border-radius: 5px;
 
+                li:hover{
+                    background-color: rgb(255,255,255);
                     a{
-                        padding:1em;
-                    }
-
-                    li:hover{
-                        background-color: rgb(255,255,255);
-                        a{
-                            color:rgb(52,58,64);
-                        }
-                    }
-                    &.show{
-                        display: block
+                        color:rgb(52,58,64);
                     }
                 }
+                &.show{
+                    display: block
+                }
             }
+        }
         
         .search{
             display: flex;
