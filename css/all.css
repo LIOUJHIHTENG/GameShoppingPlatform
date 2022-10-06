@@ -223,24 +223,23 @@ main {
     background-color: rgb(52, 58, 64);
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    overflow-y: auto;
   }
-  .mobileNavbar ul li {
+  .mobileNavbar li {
     padding: 1em;
   }
-  .mobileNavbar ul .navbarList ul {
+  .mobileNavbar .navbarList ul {
     display: none;
     margin-top: 1rem;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
   }
-  .mobileNavbar ul .navbarList ul li:hover {
+  .mobileNavbar .navbarList ul li:hover {
     background-color: rgb(255, 255, 255);
   }
-  .mobileNavbar ul .navbarList ul li:hover a {
+  .mobileNavbar .navbarList ul li:hover a {
     color: rgb(52, 58, 64);
   }
-  .mobileNavbar ul .navbarList ul.show {
+  .mobileNavbar .navbarList ul.show {
     display: block;
   }
   .mobileNavbar .search {
@@ -276,9 +275,8 @@ main {
   }
 
   .search,
-.navbar > li:nth-last-of-type(1),
-.navbar > li:nth-last-of-type(2),
-.navbar > li:nth-last-of-type(3) {
+.navbar > li:has(:not(.navbarAccount, .loginOutBtn)),
+.mobileNavbar > li:has(.navbarAccount, .loginOutBtn) {
     display: none;
   }
 
@@ -288,5 +286,14 @@ main {
 
   main {
     max-width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobileNavbar > li:has(.navbarAccount, .loginOutBtn) {
+    display: block;
   }
 }

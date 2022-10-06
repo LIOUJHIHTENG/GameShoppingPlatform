@@ -14,7 +14,7 @@ let registerName="/login.html";
 let loginPageLoginStatus=(pathname===loginName&&getLoginAccountStatus());
 let registerPageLoginStatus=(pathname===registerName&&getLoginAccountStatus());
 if(loginPageLoginStatus||registerPageLoginStatus){
-    window.location.assign("../index.html");
+    window.location.assign("./index.html");
 }
 
 function getLoginAccount(){
@@ -23,15 +23,7 @@ function getLoginAccount(){
     return loginAccountObj;
 }
 
-if(getLoginAccountStatus()){
-    let loginAccountObj=getLoginAccount();
-    $(".navbarAccount").prop("href","#");
-    $(".navbarLogin").text(`Hi ! ${loginAccountObj.accountTxt}`);
-    $(".navbarRegister").prop("href","#");
-    $(".navbarRegister").text("登出");
-}
-
-$(".navbarRegister").on("click",function(){
+$("body").on("click",".loginOutBtn",function(){
     clearLoginAccount();
-    window.location.assign("https://lioujhihteng.github.io/GameShoppingPlatform-jquery/login.html");
+    window.location.assign("./login.html");
 })

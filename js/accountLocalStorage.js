@@ -36,7 +36,6 @@ function registerToDatabase(){
         accountTxt:$("#accountTxt").val(),
         passwordTxt:$("#passwordTxt").val(),
         emailTxt:$("#emailTxt").val(),
-        loginStatus:false
     };
     accountArray.push(accountObject);
     let accountStr=JSON.stringify(accountArray);

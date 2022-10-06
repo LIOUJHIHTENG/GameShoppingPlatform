@@ -206,7 +206,7 @@ function detectPasswordConfirm(target){
     let inputVal=target.val();
     let errorStatus=false;
     let message=findErrorStatusObj(errorType).message;
-    if(inputVal!==$("#accountTxt").val()){
+    if(inputVal===$("#passwordTxt").val()){
         message=successMessage;
         errorStatus=true;
     }

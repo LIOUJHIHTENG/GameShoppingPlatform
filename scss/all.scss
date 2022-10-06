@@ -202,8 +202,6 @@ main{
         z-index: 3;
         background-color: $header-bgColor;
         transition: 0.5s;
-        overflow-y: auto;
-        ul{
             li{
                 padding:1em;
             }
@@ -225,7 +223,6 @@ main{
                     }
                 }
             }
-        }
         
         .search{
             display: flex;
@@ -259,10 +256,10 @@ main{
         }
     }
 
+
     .search,
-    .navbar>li:nth-last-of-type(1),
-    .navbar>li:nth-last-of-type(2),
-    .navbar>li:nth-last-of-type(3){
+    .navbar>li:has(:not(.navbarAccount,.loginOutBtn)),
+    .mobileNavbar>li:has(.navbarAccount,.loginOutBtn){
         display: none;
     }
 
@@ -272,5 +269,15 @@ main{
 
     main{
         max-width: 100%;
+    }
+}
+
+@media(max-width:650px){
+    .navbar{
+        display: none;
+    }
+
+    .mobileNavbar>li:has(.navbarAccount,.loginOutBtn){
+        display: block;
     }
 }
