@@ -224,14 +224,21 @@ main {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  .mobileNavbar li {
+  .mobileNavbar > li {
     padding: 1em;
+  }
+  .mobileNavbar .navbarList a {
+    display: block;
+    width: 100%;
   }
   .mobileNavbar .navbarList ul {
     display: none;
     margin-top: 1rem;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
+  }
+  .mobileNavbar .navbarList ul a {
+    padding: 1em;
   }
   .mobileNavbar .navbarList ul li:hover {
     background-color: rgb(255, 255, 255);
@@ -276,8 +283,13 @@ main {
 
   .search,
 .navbar > li:has(:not(.navbarAccount, .loginOutBtn)),
-.mobileNavbar > li:has(.navbarAccount, .loginOutBtn) {
+.mobileNavbar > li:has(.navbarAccount, .loginOutBtn),
+.mobileNavbar > li:has(.navbarLogin, .navbarRegister) {
     display: none;
+  }
+
+  .navbar > li:has(.navbarLogin, .navbarRegister) {
+    display: block;
   }
 
   .navbar > li:nth-last-of-type(4) > a {
@@ -293,7 +305,8 @@ main {
     display: none;
   }
 
-  .mobileNavbar > li:has(.navbarAccount, .loginOutBtn) {
+  .mobileNavbar > li:has(.navbarAccount, .loginOutBtn),
+.mobileNavbar > li:has(.navbarLogin, .navbarRegister) {
     display: block;
   }
 }

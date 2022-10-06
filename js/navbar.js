@@ -149,6 +149,15 @@ function init(){
         <li>
             <a href="./register.html" class=" navbarRegister">註冊</a>
         </li>
+        `;
+
+        mobileNavbarLi+=`
+        <li>
+            <a href="./login.html" class="navbarLogin">登入</a>
+        </li>
+        <li>
+            <a href="./register.html" class=" navbarRegister">註冊</a>
+        </li>
         `
     }
      navbarLi+=`

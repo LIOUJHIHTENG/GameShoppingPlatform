@@ -23,7 +23,16 @@ function getLoginAccount(){
     return loginAccountObj;
 }
 
-$("body").on("click",".loginOutBtn",function(){
+
+function logoutAccount(){
     clearLoginAccount();
     window.location.assign("./login.html");
+}
+
+$(".navbar ").on("click",".loginOutBtn",function(){
+    logoutAccount();
+})
+
+$(".mobileNavbar ").on("click",".loginOutBtn",function(){
+    logoutAccount();
 })
