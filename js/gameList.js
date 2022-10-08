@@ -39,7 +39,7 @@ if(params.has("type")){
                 if(typeId===item.type)
                     return item
             })
-            hosatOrTypeLabel=filterData[0].label;
+            hosatOrTypeLabel=filterData[0].name;
             getGame();
         }
     })
@@ -56,7 +56,7 @@ if(params.has("host")){
                 if(hostId===item.host)
                     return item
             })
-            hosatOrTypeLabel=filterData[0].label;
+            hosatOrTypeLabel=filterData[0].name;
             getGame();
         }
     })
@@ -74,7 +74,7 @@ function getGame(){
         type:"json",
         success:function(data){
             if(params.has("host")||params.has("type")){
-                if(hosatOrTypeLabel!=="allHost"&&hosatOrTypeLabel!=="allType"){
+                if(hosatOrTypeLabel!=="所有主機"&&hosatOrTypeLabel!=="所有類型"){
                     data=data.filter(function(item){
                         if(hosatOrTypeLabel===item.type||hosatOrTypeLabel===item.host){
                             return item;

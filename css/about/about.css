@@ -18,6 +18,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 1em;
 }
 .mainAbout .title, .mainAbout .content {
   height: 500px;

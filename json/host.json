@@ -1,22 +1,18 @@
 [
     {
         "host":0,
-        "name":"所有主機",
-        "label":"allHost"
+        "name":"所有主機"
     },
     {
         "host":1,
-        "name":"PS4",
-        "label":"PS4"
+        "name":"PS4"
     },
     {
         "host":2,
-        "name":"XBOX",
-        "label":"XBOX"
+        "name":"XBOX"
     },
     {
         "host":3,
-        "name":"SWITCH",
-        "label":"SWITCH"
+        "name":"SWITCH"
     }
 ]

@@ -216,7 +216,8 @@ main{
         .navbarList{
             ul{
                 display: none;
-                margin-top: 1rem;
+                margin: 1em;
+                margin-top: 0;
                 border:$navbarList-border;
                 border-radius: 5px;
 

@@ -234,7 +234,8 @@ main {
   }
   .mobileNavbar .navbarList ul {
     display: none;
-    margin-top: 1rem;
+    margin: 1em;
+    margin-top: 0;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
   }

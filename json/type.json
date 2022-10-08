@@ -1,37 +1,30 @@
 [
     {
         "type":0,
-        "name":"所有類型",
-        "label":"allType"
+        "name":"所有類型"
     },
     {
         "type":1,
-        "name":"動作",
-        "label":"action"
+        "name":"動作"
     },
     {
         "type":2,
-        "name":"角色扮演",
-        "label":"rpg"
+        "name":"角色扮演"
     },
     {
         "type":3,
-        "name":"恐怖",
-        "label":"scary"
+        "name":"恐怖"
     },
     {
         "type":4,
-        "name":"射擊",
-        "label":"shooting"
+        "name":"射擊"
     },    
     {
         "type":5,
-        "name":"運動",
-        "label":"sport"
+        "name":"運動"
     },
     {
         "type":6,
-        "name":"即時戰略",
-        "label":"strategy"
+        "name":"即時戰略"
     }
 ]
