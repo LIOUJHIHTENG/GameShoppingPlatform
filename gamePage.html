@@ -15,6 +15,7 @@
     <script src="./js/search.js" defer></script>
     <script src="./js/gamePage.js" defer></script>
     <script src="./js/accountLocalStorage.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
 </head>
 <body>
     <div class="modal"></div>
@@ -50,19 +51,54 @@
         <!--主要內容-->
         <main>
             <div class="gamePage">
-                <h2 class="gameTitle">Back in 1995</h2>
+                <h2 class="gameTitle"></h2>
                 <div class="gameImg">
-                    <img src="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/gameImg/944126988image (1)_23_11zon.webp" alt="">
+                    <img>
                 </div>
                 <div class="gameDetail">
-                    <div class="releaseDate">2020/11/03</div>
+                    <div class="releaseDate">
+                        <div class="title">
+                            發行日期:
+                        </div>
+                        <div class="date"></div>
+                    </div>
                     <div class="gameHost">
-                        PS4
+                        <div class="title">主機種類:</div>
+                        <div class="host"></div>
                     </div>
                     <div class="gameType">
-                        
+                        <div class="title">遊戲種類:</div>
+                        <div class="type"></div>
                     </div>
                 </div>
+                    <div class="addCart">
+                        <div class="gameTilte">
+                        </div>
+                        <div class="addCartPart">
+                            <div class="price">
+                            </div>
+                            <button class="addCartBtn">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gameInfo">
+                        <div class="title">
+                            遊戲介紹
+                        </div>
+                        <div class="introContent">
+                        </div>
+                    </div>
+                    <div class="gameVideo">
+                        <div class="title">
+                            遊戲預告
+                        </div>
+                        <div class="video">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <div id="player"></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </main>
     </div>
