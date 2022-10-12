@@ -37,16 +37,17 @@ function renderGamePage(data){
     changeTitle(data);
     $(".gameTitle").text(data.name);
     $(".gameImg>img").attr("src",data.imgUrl);
-    $(".releaseDate>.date").text(data.launchDate);
+    $(".releaseDate .date").text(data.launchDate);
     $(".host").text(data.host);
     $(".type").text(data.type);
+    $(".price").text(`NT $${data.price}`);
     $(".introContent").text(data.intro);
     createVideo(data.video);
 }
 
 function createVideo(video){
     let videoDom=`
-    <div class="embed-responsive embed-responsive-16by9">
+    <div class="videoResponsive">
         <div id="player"></div>
     </div>
     `;

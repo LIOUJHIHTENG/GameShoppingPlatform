@@ -8,7 +8,7 @@ let searchText=params.get("searchText");
 let hosatOrTypeLabel="";
 
 let currentPage=1;
-let pageSize=5;
+let pageSize=6;
 let totalPages=0;
 let leftRight=2;
 let filterAttr="";

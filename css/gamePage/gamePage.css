@@ -1,0 +1,170 @@
+main {
+  max-width: 85%;
+}
+
+.gamePage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.5em;
+  -ms-grid-rows: auto 1.5em auto 1.5em auto 1.5em auto 1.5em auto;
+      grid-template-areas: "gameTitle gameTitle" "gameImg  gameDetail" "addCart addCart" "gameInfo gameInfo" "gameVideo gameVideo";
+}
+.gamePage .gameTitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: gameTitle;
+  font-size: 2rem;
+  white-space: nowrap;
+}
+.gamePage .gameImg {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: gameImg;
+}
+.gamePage .gameDetail {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: gameDetail;
+  color: #556772;
+  font-size: 0.9rem;
+  line-height: 2em;
+}
+.gamePage .addCart {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: addCart;
+  background-color: rgb(85, 99, 113);
+  padding: 2em;
+  padding-bottom: 1em;
+}
+.gamePage .addCart .gameTitle {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+.gamePage .addCart .addCartOutPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.gamePage .addCart .addCartOutPart .addCartInnerPart {
+  background-color: rgb(0, 0, 0);
+}
+.gamePage .addCart .addCartOutPart .price {
+  text-align: center;
+  padding: 0.5em;
+}
+.gamePage .addCart .addCartOutPart .addCartBlock {
+  display: inline-block;
+}
+.gamePage .addCart .addCartOutPart .addCartBlock .addCartBtn {
+  text-align: right;
+  background-color: rgb(0, 116, 224);
+  color: rgb(255, 255, 255);
+  border: none;
+  height: 100%;
+  padding: 0.5em;
+}
+.gamePage .infoTitle .title {
+  font-size: 1.5rem;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.gamePage .gameInfo {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: gameInfo;
+}
+.gamePage .gameInfo .introContent {
+  line-height: 32px;
+  font-size: 1.2rem;
+  text-indent: 4rem;
+}
+.gamePage .gameVideo {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: gameVideo;
+}
+
+.videoResponsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.videoResponsive :is(iframe, object, embed) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 650px) {
+  main {
+    max-width: 95%;
+  }
+
+  .gamePage {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+        grid-template-areas: "gameTitle gameTitle" "gameImg  gameImg" "gameDetail gameDetail" "addCart addCart" "gameInfo gameInfo" "gameVideo gameVideo";
+  }
+  .gamePage .gameTitle {
+    text-align: center;
+  }
+  .gamePage .gameImg {
+    text-align: center;
+  }
+  .gamePage .gameDetail {
+    font-size: 1.2rem;
+  }
+
+  .gamePage .gameTitle {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .gamePage .gameImg {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .gamePage .gameDetail {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .gamePage .addCart {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .gamePage .gameInfo {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  .gamePage .gameVideo {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+}
