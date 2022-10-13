@@ -6,6 +6,7 @@ main{
     display: grid;
     grid-template-columns:  1fr 1fr;
     row-gap: 1.5em;
+    column-gap: 1.5em;
     grid-template-areas: 
     "gameTitle gameTitle"
     "gameImg  gameDetail"
@@ -22,6 +23,12 @@ main{
 
     .gameImg{
         grid-area:gameImg;
+        max-width: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .gameDetail{
@@ -129,7 +136,7 @@ main{
         }
         
         .gameImg{
-            text-align: center;
+            margin: 0 auto;
         }
 
         .gameDetail{

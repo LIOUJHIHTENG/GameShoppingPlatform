@@ -1,7 +1,7 @@
 let gameJson="https://lioujhihteng.github.io/GameShoppingPlatform-jquery/json/game.json";
 getTypeHost(typeJson,".typeLeaderboard .label");
 getTypeHost(hostJson,".hostLeaderboard .label");
-getGame(gameJson,"allType","PS4");
+getGame(gameJson,"所有類型","PS4");
 
 function getTypeHost(json,ele){
     $.ajax({
@@ -21,8 +21,8 @@ function createFilterLabelDoms(data,ele){
         }
         let dom=`
         <div>
-            <input type="radio" name="${Object.keys(data[0])[0]}" id="${item.label}" value="${item.label}">
-            <label for="${item.label}">${item.name}</label>
+            <input type="radio" name="${Object.keys(data[0])[0]}" id="${item.name}" value="${item.name}">
+            <label for="${item.name}">${item.name}</label>
         </div>`;
         return dom;
     }).join("");
@@ -31,7 +31,7 @@ function createFilterLabelDoms(data,ele){
 }
 
 let hostStr="PS4";
-let typeStr="allType";
+let typeStr="所有類型";
 $(document).on("change",".leaderboardTable input[name=type]",function(e){
     typeStr=this.value;
     getGame(gameJson,this.value,hostStr);
@@ -42,7 +42,7 @@ $(document).on("change",".leaderboardTable input[name=host]",function(e){
     getGame(gameJson,typeStr,this.value);
 })
 
-function getGame(json,type="allType",host="PS4"){
+function getGame(json,type="所有類型",host="PS4"){
     $.ajax({
         url:json,
         method:"get",
@@ -62,7 +62,7 @@ function createTypeLeaderDoms(data,type){
     })
 
     let filterData="";
-    if(type==="allType"){
+    if(type==="所有類型"){
         filterData=data.map(function(item){
             return item;
         })
