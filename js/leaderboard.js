@@ -84,7 +84,7 @@ function createTypeLeaderDoms(data,type){
                     <img src="${item.imgUrl}">
                 </div>
                 <div>
-                    <a href="../gamePage.html?id=${item.id}"  target="_blank">${item.name}</a>
+                    <a href="./gamePage.html?id=${item.id}"  target="_blank">${item.name}</a>
                 </div>
                 <div>${item.sales}</div>
             </li>
